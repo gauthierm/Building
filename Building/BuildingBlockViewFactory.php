@@ -53,7 +53,7 @@ class BuildingBlockViewFactory
 
 		if ($block->media instanceof SiteAudioMedia) {
 			$type = 'building-block-audio';
-		if ($block->media instanceof SiteVideoMedia) {
+		} elseif ($block->media instanceof SiteVideoMedia) {
 			$type = 'building-block-video';
 		} elseif ($block->image instanceof SiteImage) {
 			$type = 'building-block-image';
