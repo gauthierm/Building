@@ -125,6 +125,7 @@ SiteViewFactory::registerView('building-block-audio', 'BuildingBlockAudioView');
 SiteViewFactory::registerView('building-block-video', 'BuildingBlockVideoView');
 SiteViewFactory::registerView('building-block-image', 'BuildingBlockImageView');
 SiteViewFactory::registerView('building-block-xhtml', 'BuildingBlockXHTMLView');
+SiteViewFactory::registerView('building-block-attachment', 'BuildingBlockAttachmentView');
 
 SwatUI::mapClassPrefixToPath('Building', 'Building');
 
