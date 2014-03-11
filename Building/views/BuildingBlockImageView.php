@@ -105,11 +105,11 @@ class BuildingBlockImageView extends BuildingBlockView
 
 	protected function displayTitle(BuildingBlock $block)
 	{
-		if ($this->getMode('title') > SiteView::MODE_NONE &&
-			$block->image->title != '') {
+		$title = $this->image->getTitle();
+		if ($this->getMode('title') > SiteView::MODE_NONE && $title != '') {
 			$span = new SwatHtmlTag('span');
 			$span->class = 'building-block-image-title';
-			$span->setContent($block->image->getTitle());
+			$span->setContent($title);
 			$span->display();
 		}
 	}
