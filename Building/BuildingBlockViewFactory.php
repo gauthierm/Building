@@ -49,7 +49,7 @@ class BuildingBlockViewFactory
 	 */
 	public static function getViewType(BuildingBlock $block)
 	{
-		$type = 'building-block-content';
+		$type = 'building-block-xhtml';
 
 		if ($block->media instanceof SiteAudioMedia) {
 			$type = 'building-block-audio';
