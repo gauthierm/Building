@@ -9,6 +9,22 @@ require_once 'Building/views/BuildingBlockView.php';
  */
 abstract class BuildingBlockMediaView extends BuildingBlockView
 {
+	// {{{ protected properties
+
+	/**
+	 * @var SiteJwMediaPlayerDisplay
+	 */
+	protected $media_player = null;
+
+	// }}}
+	// {{{ public function setMediaPlayer()
+
+	public function setMediaPlayer(SiteJwMediaPlayerDisplay $player)
+	{
+		$this->media_player = $player;
+	}
+
+	// }}}
 }
 
 ?>

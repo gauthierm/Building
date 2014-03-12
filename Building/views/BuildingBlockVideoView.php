@@ -11,22 +11,6 @@ require_once 'Building/views/BuildingBlockMediaView.php';
  */
 class BuildingBlockVideoView extends BuildingBlockMediaView
 {
-	// {{{ protected properties
-
-	/**
-	 * @var SiteJwMediaPlayerDisplay
-	 */
-	protected $media_player = null;
-
-	// }}}
-	// {{{ public function setMediaPlayer()
-
-	public function setMediaPlayer(SiteJwMediaPlayerDisplay $player)
-	{
-		$this->media_player = $player;
-	}
-
-	// }}}
 	// {{{ protected function define()
 
 	protected function define()
