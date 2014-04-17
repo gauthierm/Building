@@ -93,7 +93,7 @@ class BuildingBlockImageView extends BuildingBlockView
 	protected function displayImage(BuildingBlock $block)
 	{
 		if ($this->getMode('image') > SiteView::MODE_NONE) {
-			$img = $this->block->image->getImgTag(
+			$img = $block->image->getImgTag(
 				$this->image_dimension_shortname
 			);
 			$img->display();
@@ -105,7 +105,7 @@ class BuildingBlockImageView extends BuildingBlockView
 
 	protected function displayTitle(BuildingBlock $block)
 	{
-		$title = $this->image->getTitle();
+		$title = $block->image->getTitle();
 		if ($this->getMode('title') > SiteView::MODE_NONE && $title != '') {
 			$span = new SwatHtmlTag('span');
 			$span->class = 'building-block-image-title';
