@@ -25,6 +25,24 @@ class BuildingBlockEditXHTML extends BuildingBlockEdit
 	}
 
 	// }}}
+
+	// build phase
+	// {{{ protected function buildNavBar()
+
+	protected function buildNavBar()
+	{
+		parent::buildNavBar();
+
+		$this->navbar->popEntry();
+
+		if ($this->isNew()) {
+			$this->navbar->createEntry(Building::_('New Text Content'));
+		} else {
+			$this->navbar->createEntry(Building::_('Edit Text Content'));
+		}
+	}
+
+	// }}}
 }
 
 ?>

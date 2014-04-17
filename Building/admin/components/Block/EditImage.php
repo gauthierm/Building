@@ -180,6 +180,22 @@ class BuildingBlockEditImage extends BuildingBlockEdit
 	}
 
 	// }}}
+	// {{{ protected function buildNavBar()
+
+	protected function buildNavBar()
+	{
+		parent::buildNavBar();
+
+		$this->navbar->popEntry();
+
+		if ($this->isNew()) {
+			$this->navbar->createEntry(Building::_('New Image Content'));
+		} else {
+			$this->navbar->createEntry(Building::_('Edit Image Content'));
+		}
+	}
+
+	// }}}
 }
 
 ?>
