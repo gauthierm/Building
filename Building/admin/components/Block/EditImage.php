@@ -167,7 +167,7 @@ class BuildingBlockEditImage extends BuildingBlockEdit
 	{
 		parent::loadObject();
 
-		$image = $this->block->image;
+		$image = $this->getObject()->image;
 		$preview = $this->ui->getWidget('image_preview');
 
 		$preview->visible = true;
