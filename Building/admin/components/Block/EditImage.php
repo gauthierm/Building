@@ -180,6 +180,18 @@ class BuildingBlockEditImage extends BuildingBlockEdit
 	}
 
 	// }}}
+	// {{{ protected function buildForm()
+
+	protected function buildForm()
+	{
+		parent::buildForm();
+		$form = $this->ui->getWidget('edit_form');
+		if ($form instanceof SiteUploadProgressForm) {
+			$form->upload_status_server = $this->getUploadStatusServer();
+		}
+	}
+
+	// }}}
 	// {{{ protected function buildNavBar()
 
 	protected function buildNavBar()
@@ -193,6 +205,14 @@ class BuildingBlockEditImage extends BuildingBlockEdit
 		} else {
 			$this->navbar->createEntry(Building::_('Edit Image Content'));
 		}
+	}
+
+	// }}}
+	// {{{ protected function getUploadStatusServer()
+
+	protected function getUploadStatusServer()
+	{
+		return 'Block/UploadStatusServer';
 	}
 
 	// }}}
