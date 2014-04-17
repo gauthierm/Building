@@ -1,0 +1,62 @@
+.building-block-admin-view {
+	margin: -16px -15px 16px;
+	padding: 0;
+	border-bottom: 1px solid #efe8da;
+}
+
+.building-block-admin-view-content {
+	padding: 16px 15px;
+}
+
+.building-block-admin-links {
+	display: block;
+	background: #fff;
+	padding: 3px 15px;
+	margin: 0;
+	border-bottom: 1px solid #eee;
+	background: #f8f8f8;
+}
+
+.building-block-admin-links a {
+	border: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	background: transparent;
+	color: #3465a4;
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 8px 6px;
+	text-shadow: none;
+	border-radius: 0;
+}
+
+.building-block-admin-links a:hover {
+	text-shadow: none;
+	background: #e5e5e5;
+	cursor: pointer;
+}
+
+.building-block-admin-links a:active {
+	text-shadow: none;
+	background: #e5e5e5;
+	position: static;
+	color: #3465a4;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+.building-block-admin-links a:hover .swat-tool-link-title,
+.building-block-admin-links a:active .swat-tool-link-title {
+	text-shadow: none;
+	text-decoration: underline;
+}
+
+.building-block-admin-summary {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 20px 0 0;
+	color: #6b5d40;
+}

@@ -53,8 +53,10 @@ class BuildingBlockAdminCompositeView extends BuildingBlockCompositeView
 
 		if ($composite_view != '') {
 			echo '<div class="building-block-admin-view">';
+			$this->displayHeader($block);
+			echo '<div class="building-block-admin-view-content">';
 			echo $composite_view;
-			$this->displayLinks($block);
+			echo '</div>';
 			echo '</div>';
 		}
 	}
@@ -64,16 +66,24 @@ class BuildingBlockAdminCompositeView extends BuildingBlockCompositeView
 
 	protected function define()
 	{
-		$this->definePart('edit');
-		$this->definePart('delete');
+		$this->definePart('summary');
+		$this->definePart('edit-link');
+		$this->definePart('delete-link');
 	}
 
 	// }}}
-	// {{{ protected function displayLinks()
+	// {{{ protected function displayHeader()
 
-	protected function displayLinks(BuildingBlock $block)
+	protected function displayHeader(BuildingBlock $block)
 	{
 		$parts = array();
+
+		ob_start();
+		$this->displaySummary($block);
+		$summary = ob_get_clean();
+		if ($summary != '') {
+			$parts[] = $summary;
+		}
 
 		ob_start();
 		$this->displayEditLink($block);
@@ -107,8 +117,8 @@ class BuildingBlockAdminCompositeView extends BuildingBlockCompositeView
 
 	protected function displayEditLink(BuildingBlock $block)
 	{
-		if ($this->getMode('edit') > SiteView::MODE_NONE) {
-			$link = $this->getLink('edit');
+		if ($this->getMode('edit-link') > SiteView::MODE_NONE) {
+			$link = $this->getLink('edit-link');
 
 			if ($link === false) {
 				$this->edit_link->sensitive = false;
@@ -154,8 +164,8 @@ class BuildingBlockAdminCompositeView extends BuildingBlockCompositeView
 
 	protected function displayDeleteLink(BuildingBlock $block)
 	{
-		if ($this->getMode('delete') > SiteView::MODE_NONE) {
-			$link = $this->getLink('delete');
+		if ($this->getMode('delete-link') > SiteView::MODE_NONE) {
+			$link = $this->getLink('delete-link');
 
 			if ($link === false) {
 				$this->delete_link->sensitive = false;
@@ -168,6 +178,43 @@ class BuildingBlockAdminCompositeView extends BuildingBlockCompositeView
 			}
 
 			$this->delete_link->display();
+		}
+	}
+
+	// }}}
+	// {{{ protected function displaySummary()
+
+	protected function displaySummary(BuildingBlock $block)
+	{
+		if ($this->getMode('summary') > SiteView::MODE_NONE) {
+			$type = BuildingBlockViewFactory::getViewType($block);
+			switch ($type) {
+			case 'building-block-audio':
+				$summary = Building::_('Audio Content');
+				break;
+
+			case 'building-block-video':
+				$summary = Building::_('Video Content');
+				break;
+
+			case 'building-block-image':
+				$summary = Building::_('Image Content');
+				break;
+
+			case 'building-block-attachment':
+				$summary = Building::_('Attachment');
+				break;
+
+			case 'building-block-xhtml':
+			default:
+				$summary = Building::_('Text Content');
+				break;
+			}
+
+			$header = new SwatHtmlTag('h4');
+			$header->setContent($summary);
+			$header->class = 'building-block-admin-summary';
+			$header->display();
 		}
 	}
 
