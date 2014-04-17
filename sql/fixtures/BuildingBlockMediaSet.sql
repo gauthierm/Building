@@ -5,7 +5,7 @@ insert into MediaSet (
 	private,
 	skin
 ) values (
-	'block',
+	'block-video',
 	true,
 	false,
 	false,
