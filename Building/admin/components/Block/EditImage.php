@@ -136,7 +136,7 @@ class BuildingBlockEditImage extends BuildingBlockEdit
 			$image->setFileBase('../images');
 			$image->process($upload->getTempFileName());
 
-			// Delete the old image. Prevents broswer/CDN caching.
+			// Delete the old image. Prevents browser/CDN caching.
 			if (!$this->isNew()) {
 				$block->image->setFileBase('../images');
 				$block->image->delete();
