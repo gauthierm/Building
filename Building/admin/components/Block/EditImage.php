@@ -177,6 +177,16 @@ class BuildingBlockEditImage extends BuildingBlockEdit
 		$preview->preview_image = $image->getUri('original', '../');
 		$preview->preview_width = $image->getWidth('original');
 		$preview->preview_height = $image->getHeight('original');
+
+		if ($this->getObject()->image instanceof SiteImage) {
+			$this->assignObjectValuesToUi(
+				$this->getObject()->image,
+				array(
+					'title',
+					'description'
+				)
+			);
+		}
 	}
 
 	// }}}
