@@ -8,7 +8,7 @@ require_once 'Building/admin/components/Block/Edit.php';
  * @copyright 2014 silverorange
  * @license   http://www.opensource.org/licenses/mit-license.html MIT License
  */
-class BuildingBlockEditImage extends BuildingBlockEdit
+class BuildingBlockImageEdit extends BuildingBlockEdit
 {
 	// {{{ protected properties
 
@@ -22,7 +22,7 @@ class BuildingBlockEditImage extends BuildingBlockEdit
 
 	protected function getUiXml()
 	{
-		return 'Building/admin/components/Block/edit-image.xml';
+		return 'Building/admin/components/Block/image-edit.xml';
 	}
 
 	// }}}

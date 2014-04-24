@@ -7,13 +7,13 @@ require_once 'Building/admin/components/Block/Edit.php';
  * @copyright 2014 silverorange
  * @license   http://www.opensource.org/licenses/mit-license.html MIT License
  */
-class BuildingBlockEditXHTML extends BuildingBlockEdit
+class BuildingBlockXHTMLEdit extends BuildingBlockEdit
 {
 	// {{{ protected function getUiXml()
 
 	protected function getUiXml()
 	{
-		return 'Building/admin/components/Block/edit-xhtml.xml';
+		return 'Building/admin/components/Block/xhtml-edit.xml';
 	}
 
 	// }}}
