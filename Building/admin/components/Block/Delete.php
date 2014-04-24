@@ -50,6 +50,7 @@ class BuildingBlockDelete extends AdminDBDelete
 		);
 
 		$view = SiteViewFactory::get($this->app, 'building-block');
+		$view->getImageView()->setImageDimensionShortname('thumb');
 
 		ob_start();
 
