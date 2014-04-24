@@ -29,7 +29,9 @@ class BuildingBlockXHTMLView extends BuildingBlockView
 
 	protected function displayBody(BuildingBlock $block)
 	{
-		if ($this->getMode('body') > SiteView::MODE_NONE) {
+		if ($this->getMode('body') > SiteView::MODE_NONE &&
+			$block->bodytext != '') {
+
 			$div = new SwatHtmlTag('div');
 			$div->class = 'building-block-bodytext';
 			$div->setContent($block->bodytext, 'text/xml');
