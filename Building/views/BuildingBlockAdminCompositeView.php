@@ -127,27 +127,27 @@ class BuildingBlockAdminCompositeView extends BuildingBlockCompositeView
 					$type = BuildingBlockViewFactory::getViewType($block);
 					switch ($type) {
 					case 'building-block-audio':
-						$link = sprintf('Block/EditAudio?id=%s', $block->id);
+						$link = sprintf('Block/AudioEdit?id=%s', $block->id);
 						break;
 
 					case 'building-block-video':
-						$link = sprintf('Block/EditVideo?id=%s', $block->id);
+						$link = sprintf('Block/VideoEdit?id=%s', $block->id);
 						break;
 
 					case 'building-block-image':
-						$link = sprintf('Block/EditImage?id=%s', $block->id);
+						$link = sprintf('Block/ImageEdit?id=%s', $block->id);
 						break;
 
 					case 'building-block-attachment':
 						$link = sprintf(
-							'Block/EditAttachment?id=%s',
+							'Block/AttachmentEdit?id=%s',
 							$block->id
 						);
 						break;
 
 					case 'building-block-xhtml':
 					default:
-						$link = sprintf('Block/EditXHTML?id=%s', $block->id);
+						$link = sprintf('Block/XHTMLEdit?id=%s', $block->id);
 						break;
 					}
 				}
