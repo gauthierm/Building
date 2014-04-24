@@ -4,9 +4,9 @@ create table Block (
 	createdate timestamp not null,
 
 	displayorder integer not null default 0,
-	attachment integer null references Attachment(id),
-	media integer null references Media(id),
-	image integer null references Image(id),
+	attachment integer null references Attachment(id) on delete set null,
+	media integer null references Media(id) on delete set null,
+	image integer null references Image(id) on delete set null,
 	bodytext text null,
 
 	primary key (id)
