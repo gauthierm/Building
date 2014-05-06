@@ -5,16 +5,16 @@
     http://pear.php.net/dtd/package-2.0.xsd">
  <name>Building</name>
  <channel>pear.silverorange.com</channel>
- <summary>Basic CME framework.</summary>
- <description>Basic CME framework.</description>
+ <summary>Basic CMS framework.</summary>
+ <description>Basic CMS framework.</description>
  <lead>
   <name>Mike Gauthier</name>
   <user>gauthierm</user>
   <email>mike@silverorange.com</email>
   <active>yes</active>
  </lead>
- <date>2014-03-11</date>
- <time>11:55:36</time>
+ <date>2014-05-06</date>
+ <time>14:26:03</time>
  <version>
   <release>0.1.0</release>
   <api>0.1.0</api>
@@ -29,6 +29,57 @@ initial release
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
+   <dir name="Building">
+    <dir name="admin">
+     <dir name="components">
+      <dir name="Block">
+       <file name="Delete.php" role="php" />
+       <file name="Edit.php" role="php" />
+       <file name="image-edit.xml" role="php" />
+       <file name="ImageEdit.php" role="php" />
+       <file name="UploadStatusServer.php" role="php" />
+       <file name="xhtml-edit.xml" role="php" />
+       <file name="XHTMLEdit.php" role="php" />
+      </dir> <!-- /Building/admin/components/Block -->
+     </dir> <!-- /Building/admin/components -->
+    </dir> <!-- /Building/admin -->
+    <dir name="dataobjects">
+     <file name="BuildingBlock.php" role="php" />
+     <file name="BuildingBlockWrapper.php" role="php" />
+    </dir> <!-- /Building/dataobjects -->
+    <dir name="views">
+     <file name="BuildingBlockAdminCompositeView.php" role="php" />
+     <file name="BuildingBlockAttachmentView.php" role="php" />
+     <file name="BuildingBlockAudioView.php" role="php" />
+     <file name="BuildingBlockCompositeView.php" role="php" />
+     <file name="BuildingBlockImageView.php" role="php" />
+     <file name="BuildingBlockMediaView.php" role="php" />
+     <file name="BuildingBlockVideoView.php" role="php" />
+     <file name="BuildingBlockView.php" role="php" />
+     <file name="BuildingBlockXHTMLView.php" role="php" />
+    </dir> <!-- /Building/views -->
+    <file name="Building.php" role="php" />
+    <file name="BuildingBlockViewFactory.php" role="php" />
+   </dir> <!-- /Building -->
+   <dir name="sql">
+    <dir name="fixtures">
+     <file name="BuildingBlockAttachmentSet.sql" role="data" />
+     <file name="BuildingBlockImageDimension.sql" role="data" />
+     <file name="BuildingBlockImageSet.sql" role="data" />
+     <file name="BuildingBlockMediaEncoding.sql" role="data" />
+     <file name="BuildingBlockMediaSet.sql" role="data" />
+    </dir> <!-- /sql/fixtures -->
+    <dir name="tables">
+     <file name="Block.sql" role="data" />
+    </dir> <!-- /sql/tables -->
+   </dir> <!-- /sql -->
+   <dir name="www">
+    <dir name="admin">
+     <dir name="styles">
+      <file name="building-block-admin-view.css" role="data" />
+     </dir> <!-- /www/admin/styles -->
+    </dir> <!-- /www/admin -->
+   </dir> <!-- /www -->
    <file name="LICENSE" role="doc" />
    <file name="README.md" role="doc" />
   </dir> <!-- / -->
@@ -44,7 +95,7 @@ initial release
    <package>
     <name>Swat</name>
     <channel>pear.silverorange.com</channel>
-    <min>2.0.12</min>
+    <min>2.1.2</min>
    </package>
    <package>
     <name>Site</name>
@@ -69,7 +120,7 @@ initial release
     <release>beta</release>
     <api>beta</api>
    </stability>
-   <date>2014-03-11</date>
+   <date>2014-05-06</date>
    <license uri="http://www.opensource.org/licenses/mit-license.html">MIT License</license>
    <notes>
 initial release
