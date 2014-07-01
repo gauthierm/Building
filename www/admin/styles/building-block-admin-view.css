@@ -66,6 +66,10 @@
 	text-decoration: none;
 	min-height: 48px;
 	position: relative;
+	padding: 4px 8px 4px 4px;
+}
+.building-block-attachment-wrapper:hover {
+	background: #e5e5e5;
 }
 
 .building-block-attachment-wrapper:after {
@@ -79,19 +83,18 @@
 .building-block-attachment-icon {
 	display: block;
 	position: absolute;
-	left: 0;
-	top: 0;
+	left: 4px;
+	top: 4px;
 	width: 48px;
 	height: 48px;
-	background: #f00;
-	margin-right: 8px;
+	background: url('../images/attachment.png') center center no-repeat transparent;
 }
 
 .building-block-attachment-title {
 	display: block;
 	float: left;
 	clear: left;
-	margin-left: 56px;
+	margin-left: 52px;
 	margin-bottom: 4px;
 	text-decoration: underline;
 }
@@ -100,7 +103,7 @@
 	display: block;
 	float: left;
 	clear: left;
-	margin-left: 56px;
+	margin-left: 52px;
 	font-size: 11px;
 	color: #888;
 }
