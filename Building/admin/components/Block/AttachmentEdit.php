@@ -139,7 +139,7 @@ class BuildingBlockAttachmentEdit extends BuildingBlockEdit
 			$attachment->original_filename = $upload->getFileName();
 			$attachment->createdate        = $this->getCurrentTime();
 
-			$attachment->setFileBase('../attachments');
+			$attachment->setFileBase($this->getFileBase());
 
 			$this->assignUiValuesToObject(
 				$attachment,
@@ -152,7 +152,7 @@ class BuildingBlockAttachmentEdit extends BuildingBlockEdit
 
 			// Delete the old attachment. Prevents browser/CDN caching.
 			if (!$this->isNew()) {
-				$block->attachment->setFileBase('../attachments');
+				$block->attachment->setFileBase($this->getFileBase());
 				$block->attachment->delete();
 			}
 
@@ -170,6 +170,14 @@ class BuildingBlockAttachmentEdit extends BuildingBlockEdit
 		if ($this->getObject()->attachment instanceof SiteAttachment) {
 			$this->getObject()->attachment->save();
 		}
+	}
+
+	// }}}
+	// {{{ protected function getFileBase()
+
+	protected function getFileBase()
+	{
+		return '../attachments';
 	}
 
 	// }}}
