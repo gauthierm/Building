@@ -160,4 +160,8 @@ class BuildingBlockCompositeView extends BuildingBlockView
 	{
 		return SiteViewFactory::get($this->app, $type);
 	}
+
+	// }}}
 }
+
+?>
