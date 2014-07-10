@@ -11,6 +11,16 @@ require_once 'Building/dataobjects/BuildingBlock.php';
  */
 abstract class BuildingBlockView extends SiteView
 {
+	// {{{ protected properties
+
+	/**
+	 * @var array
+	 * @see BuildingBlockView::addCSSClassName()
+	 * @see BuildingBlockView::removeCSSClassName()
+	 */
+	protected $css_classes = array();
+
+	// }}}
 	// {{{ public function display()
 
 	public function display($block)
@@ -35,6 +45,38 @@ abstract class BuildingBlockView extends SiteView
 	}
 
 	// }}}
+	// {{{ public function setCSSClassNames()
+
+	public function setCSSClassNames(array $class_names)
+	{
+		$this->css_classes = array_unique($class_names);
+	}
+
+	// }}}
+	// {{{ public function addCSSClassName()
+
+	public function addCSSClassName($class_name)
+	{
+		$this->css_classes = array_unique(
+			array_merge(
+				array($class_name),
+				$this->css_classes
+			)
+		);
+	}
+
+	// }}}
+	// {{{ public function removeCSSClassName()
+
+	public function removeCSSClassName($class_name)
+	{
+		$this->css_classes = array_diff(
+			$this->css_classes,
+			array($class_name)
+		);
+	}
+
+	// }}}
 	// {{{ abstract protected function displayContent()
 
 	abstract protected function displayContent(BuildingBlock $block);
@@ -44,7 +86,12 @@ abstract class BuildingBlockView extends SiteView
 
 	protected function getCSSClassNames()
 	{
-		return array('building-block-view');
+		return array_unique(
+			array_merge(
+				array('building-block-view'),
+				$this->css_classes
+			)
+		);
 	}
 
 	// }}}
