@@ -40,6 +40,16 @@ class BuildingBlockCompositeView extends BuildingBlockView
 	}
 
 	// }}}
+	// {{{ public function getViewForBlock()
+
+	public function getViewForBlock(BuildingBlock $block)
+	{
+		return $this->getViewForType(
+			BuildingBlockViewFactory::getViewType($block)
+		);
+	}
+
+	// }}}
 	// {{{ protected function displayContent()
 
 	protected function displayContent(BuildingBlock $block)
@@ -141,16 +151,6 @@ class BuildingBlockCompositeView extends BuildingBlockView
 			$this->views[$type] = $this->createCompositeViewForType($type);
 		}
 		return $this->views[$type];
-	}
-
-	// }}}
-	// {{{ protected function getViewForBlock()
-
-	protected function getViewForBlock(BuildingBlock $block)
-	{
-		return $this->getViewForType(
-			BuildingBlockViewFactory::getViewType($block)
-		);
 	}
 
 	// }}}
