@@ -51,8 +51,20 @@ class BuildingBlockAttachmentView extends BuildingBlockView
 		$wrapper->open();
 
 		$this->displayIcon($block);
+
+		ob_start();
 		$this->displayTitle($block);
+		$title = ob_get_clean();
+
+		ob_start();
 		$this->displayDetails($block);
+		$details = ob_get_clean();
+
+		if ($title != '' || $details != '') {
+			echo '<span class="building-block-attachment-description">';
+			echo $title, $details;
+			echo '</span>';
+		}
 
 		$wrapper->close();
 	}
