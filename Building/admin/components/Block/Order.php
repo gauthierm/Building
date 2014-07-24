@@ -39,6 +39,9 @@ abstract class BuildingBlockOrder extends AdminOrder
 		$blocks = $this->getBlocks();
 
 		$order_widget = $this->ui->getWidget('order');
+		$order_widget->width = '500px';
+		$order_widget->height = '500px';
+		$order_widget->parent->title = null;
 		$view = $this->getView();
 		foreach ($blocks as $block) {
 			ob_start();
@@ -48,7 +51,7 @@ abstract class BuildingBlockOrder extends AdminOrder
 
 		// auto ordering doesn't make sense for blocks
 		$options_list = $this->ui->getWidget('options');
-		$options_list->visible = false;
+		$options_list->parent->visible = false;
 		$options_list->value = 'custom';
 	}
 
@@ -61,6 +64,7 @@ abstract class BuildingBlockOrder extends AdminOrder
 
 		// configure views for display in list
 		$view->getImageView()->setImageDimensionShortname('thumb');
+		$view->getXHTMLView()->setBodySummaryLength(200);
 		$view->getXHTMLView()->setPartMode('body', SiteView::MODE_SUMMARY);
 
 		// don't link attachments
@@ -71,6 +75,19 @@ abstract class BuildingBlockOrder extends AdminOrder
 		);
 
 		return $view;
+	}
+
+	// }}}
+
+	// finalize phase
+	// {{{ public function finalize()
+
+	public function finalize()
+	{
+		parent::finalize();
+		$this->layout->addHtmlHeadEntry(
+			'packages/building/admin/styles/building-block-order.css'
+		);
 	}
 
 	// }}}
