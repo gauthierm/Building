@@ -9,6 +9,24 @@ require_once 'Building/views/BuildingBlockView.php';
  */
 class BuildingBlockXHTMLView extends BuildingBlockView
 {
+	// {{{ protected properties
+
+	/** 
+	 * @var integer
+	 *
+	 * @see BuildingBlockXHTMLView::setBodySummaryLength()
+	 */
+	protected $body_summary_length = 100;
+
+	// }}}
+	// {{{ public function setBodySummaryLength()
+
+	public function setBodySummaryLength($length)
+	{
+		$this->body_summary_length = (integer)$length;
+	}
+
+	// }}}
 	// {{{ protected function define()
 
 	protected function define()
@@ -29,13 +47,22 @@ class BuildingBlockXHTMLView extends BuildingBlockView
 
 	protected function displayBody(BuildingBlock $block)
 	{
-		if ($this->getMode('body') > SiteView::MODE_NONE &&
-			$block->bodytext != '') {
-
-			$div = new SwatHtmlTag('div');
-			$div->class = 'building-block-bodytext';
-			$div->setContent($block->bodytext, 'text/xml');
-			$div->display();
+		if ($block->bodytext != '') {
+			if ($this->getMode('body') === SiteView::MODE_ALL) {
+				$div = new SwatHtmlTag('div');
+				$div->class = 'building-block-bodytext';
+				$div->setContent($block->bodytext, 'text/xml');
+				$div->display();
+			} elseif ($this->getMode('body') === SiteView::MODE_SUMMARY) {
+				$bodytext = SwatString::condense(
+					$block->bodytext,
+					$this->body_summary_length
+				);
+				$div = new SwatHtmlTag('div');
+				$div->class = 'building-block-bodytext';
+				$div->setContent($bodytext, 'text/xml');
+				$div->display();
+			}
 		}
 	}
 
