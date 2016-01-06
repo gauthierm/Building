@@ -1,0 +1,27 @@
+{
+	"name": "silverorange/building",
+	"description": "Basic CME framework.",
+	"type": "library",
+	"keywords": [ "cms" ],
+	"homepage": "https://github.com/silverorange/building",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Michael Gauthier",
+			"email": "mike@silverorange.com"
+		}
+	],
+	"require": {
+		"php": ">=5.2.1",
+		"silverorange/admin": ">=2.0.23",
+		"silverorange/site": ">=2.1.45",
+		"silverorange/swat": ">=2.2.10",
+		"silverorange/silverorange_autoloader": "*"
+	},
+	"autoload": {
+		"files": [ "autoload.php" ]
+	},
+	"include-path": [
+		"./"
+	]
+}
