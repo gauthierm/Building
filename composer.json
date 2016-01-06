@@ -1,6 +1,6 @@
 {
 	"name": "silverorange/building",
-	"description": "Basic CME framework.",
+	"description": "Basic CMS framework.",
 	"type": "library",
 	"keywords": [ "cms" ],
 	"homepage": "https://github.com/silverorange/building",
