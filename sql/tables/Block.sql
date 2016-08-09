@@ -2,6 +2,7 @@ create table Block (
 	id serial,
 
 	createdate timestamp not null,
+	modified_date timestamp not null,
 
 	displayorder integer not null default 0,
 	attachment integer null references Attachment(id) on delete set null,
