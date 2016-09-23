@@ -36,6 +36,11 @@ class BuildingBlock extends SwatDBDataObject
 	 */
 	public $createdate;
 
+	/**
+	 * @var SwatDate
+	 */
+	public $modified_date;
+
 	// }}}
 	// {{{ protected function init()
 
@@ -46,11 +51,13 @@ class BuildingBlock extends SwatDBDataObject
 		$this->table = 'Block';
 
 		$this->registerDateProperty('createdate');
+		$this->registerDateProperty('modified_date');
 
 		$this->registerInternalProperty(
 			'attachment',
 			SwatDBClassMap::get('SiteAttachment')
 		);
+
 		$this->registerInternalProperty(
 			'image',
 			SwatDBClassMap::get('SiteImage')
