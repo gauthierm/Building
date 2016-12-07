@@ -107,3 +107,21 @@
 	font-size: 11px;
 	color: #888;
 }
+
+.building-block-video-view {
+	max-width: 500px;
+}
+
+.building-block-video-title,
+.building-block-image-title {
+	display: block;
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+.building-block-video-description,
+.building-block-image-desciption {
+	display: block;
+	margin-top: 10px;
+	font-size: 11px;
+}
