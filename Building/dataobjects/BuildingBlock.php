@@ -65,7 +65,7 @@ class BuildingBlock extends SwatDBDataObject
 
 		$this->registerInternalProperty(
 			'media',
-			SwatDBClassMap::get('SiteMedia')
+			SwatDBClassMap::get('SiteVideoMedia')
 		);
 
 		$this->id_field = 'integer:id';

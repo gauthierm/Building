@@ -2,14 +2,14 @@
 
 require_once 'Site/dataobjects/SiteVideoMedia.php';
 require_once 'Site/SiteJwPlayerMediaDisplay.php';
-require_once 'Building/views/BuildingBlockMediaView.php';
+require_once 'Building/views/BuildingBlockView.php';
 
 /**
  * @package   Building
  * @copyright 2014-2016 silverorange
  * @license   http://www.opensource.org/licenses/mit-license.html MIT License
  */
-class BuildingBlockVideoView extends BuildingBlockMediaView
+class BuildingBlockVideoView extends BuildingBlockView
 {
 	// {{{ protected function define()
 
@@ -78,27 +78,12 @@ class BuildingBlockVideoView extends BuildingBlockMediaView
 	protected function displayVideo(BuildingBlock $block)
 	{
 		if ($this->getMode('video') > SiteView::MODE_NONE) {
-			if (!$this->media_player instanceof SiteJwPlayerMediaDisplay) {
-				throw new Exception(
-					'Media player needs to be set on view before video '.
-					'can be displayed. See '.
-					'BuildingBlockVideoView::setMediaPlayer().'
-				);
-			}
+			$block->media->setFileBase('media');
+			$player = $block->media->getMediaPlayer($this->app);
+			$player->display();
 
-			$this->media_player->id = sprintf(
-				'building_block_%s_video_%s',
-				$block->id,
-				$block->media->id
-			);
-
-
-			if (!in_array('building-block-video-player', $this->media_player->classes)) {
-				$this->media_player->classes[] = 'building-block-video-player';
-			}
-
-			$this->media_player->setMedia($block->media);
-			$this->media_player->display();
+			$page = $this->app->getPage();
+			$page->layout->addHtmlHeadEntrySet($player->getHtmlHeadEntrySet());
 		}
 	}
 
