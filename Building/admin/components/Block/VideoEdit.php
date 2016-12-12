@@ -115,7 +115,7 @@ class BuildingBlockVideoEdit extends BuildingBlockEdit
 		parent::buildInternal();
 
 		$media = $this->getMedia();
-		$media->setFileBase('../../media');
+		$media->setFileBase('media');
 
 		$this->ui->getWidget('edit_form')->addHiddenField('media', $media->id);
 
