@@ -30,8 +30,8 @@ class BuildingBlockVideoEdit extends BuildingBlockEdit
 
 	protected function getMedia()
 	{
-		if (!$this->media instanceof SiteMedia) {
-			if ($this->getObject()->media instanceof SiteMedia) {
+		if (!$this->media instanceof SiteVideoMedia) {
+			if ($this->getObject()->media instanceof SiteVideoMedia) {
 				$this->media = $this->getObject()->media;
 			} else {
 				$media_id = $this->app->initVar('media');
@@ -67,7 +67,7 @@ class BuildingBlockVideoEdit extends BuildingBlockEdit
 		parent::initObject();
 
 		$block = $this->getObject();
-		if (!$this->isNew() && !$block->media instanceof SiteMedia) {
+		if (!$this->isNew() && !$block->media instanceof SiteVideoMedia) {
 			throw new AdminNotFoundException(
 				'Can only edit video content.'
 			);
