@@ -92,6 +92,15 @@ class BuildingBlockAdminCompositeView extends BuildingBlockCompositeView
 			$parts[] = $link;
 		}
 
+		$type = BuildingBlockViewFactory::getViewType($block);
+		if ($type === 'building-block-video') {
+			$a_tag = new SwatHtmlTag('a');
+			$a_tag->class = 'swat-tool-link swat-tool-link-edit';
+			$a_tag->setContent(Building::_('Set Poster Frame'));
+			$a_tag->href = 'Media/PosterFrame?id='.$block->media->id;
+			$parts[] = $a_tag;
+		}
+
 		ob_start();
 		$this->displayDeleteLink($block);
 		$link = ob_get_clean();
