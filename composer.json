@@ -14,7 +14,7 @@
 	"require": {
 		"php": ">=5.2.1",
 		"silverorange/admin": "^2.1.5",
-		"silverorange/site": "^4.5.0",
+		"silverorange/site": "^4.6.0",
 		"silverorange/swat": "^2.2.10"
 	},
 	"autoload": {
