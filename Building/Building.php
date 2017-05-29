@@ -1,13 +1,10 @@
 <?php
 
-require_once 'Swat/SwatUI.php';
-require_once 'Site/SiteViewFactory.php';
-
 /**
  * Container for package-wide static methods
  *
  * @package   Building
- * @copyright 2014-2016 silverorange
+ * @copyright 2014-2017 silverorange
  * @license   http://www.opensource.org/licenses/mit-license.html MIT License
  */
 class Building
@@ -22,12 +19,22 @@ class Building
 	const GETTEXT_DOMAIN = 'building';
 
 	// }}}
+	// {{{ private properties
+
+	/**
+	 * Whether or not this package is initialized
+	 *
+	 * @var boolean
+	 */
+	private static $is_initialized = false;
+
+	// }}}
 	// {{{ public static function _()
 
 	/**
 	 * Translates a phrase
 	 *
-	 * This is an alias for {@link Building::gettext()}.
+	 * This is an alias for {@link self::gettext()}.
 	 *
 	 * @param string $message the phrase to be translated.
 	 *
@@ -104,6 +111,56 @@ class Building
 	}
 
 	// }}}
+	// {{{ public static function init()
+
+	public static function init()
+	{
+		if (self::$is_initialized) {
+			return;
+		}
+
+		Swat::init();
+		Site::init();
+		Admin::init();
+
+		self::setupGettext();
+
+		SiteViewFactory::addPath('Building/views');
+		SiteViewFactory::registerView(
+			'building-block-audio',
+			'BuildingBlockAudioView'
+		);
+		SiteViewFactory::registerView(
+			'building-block-video',
+			'BuildingBlockVideoView'
+		);
+		SiteViewFactory::registerView(
+			'building-block-image',
+			'BuildingBlockImageView'
+		);
+		SiteViewFactory::registerView(
+			'building-block-xhtml',
+			'BuildingBlockXHTMLView'
+		);
+		SiteViewFactory::registerView(
+			'building-block-attachment',
+			'BuildingBlockAttachmentView'
+		);
+		SiteViewFactory::registerView(
+			'building-block',
+			'BuildingBlockCompositeView'
+		);
+		SiteViewFactory::registerView(
+			'building-block-admin',
+			'BuildingBlockAdminCompositeView'
+		);
+
+		SwatUI::mapClassPrefixToPath('Building', 'Building');
+
+		self::$is_initialized = true;
+	}
+
+	// }}}
 	// {{{ private function __construct()
 
 	/**
@@ -117,18 +174,5 @@ class Building
 
 	// }}}
 }
-
-Building::setupGettext();
-
-SiteViewFactory::addPath('Building/views');
-SiteViewFactory::registerView('building-block-audio', 'BuildingBlockAudioView');
-SiteViewFactory::registerView('building-block-video', 'BuildingBlockVideoView');
-SiteViewFactory::registerView('building-block-image', 'BuildingBlockImageView');
-SiteViewFactory::registerView('building-block-xhtml', 'BuildingBlockXHTMLView');
-SiteViewFactory::registerView('building-block-attachment', 'BuildingBlockAttachmentView');
-SiteViewFactory::registerView('building-block', 'BuildingBlockCompositeView');
-SiteViewFactory::registerView('building-block-admin', 'BuildingBlockAdminCompositeView');
-
-SwatUI::mapClassPrefixToPath('Building', 'Building');
 
 ?>

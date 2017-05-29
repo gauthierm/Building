@@ -13,9 +13,9 @@
 	],
 	"require": {
 		"php": ">=5.2.1",
-		"silverorange/admin": "^2.1.5",
-		"silverorange/site": "^4.6.0",
-		"silverorange/swat": "^2.2.10"
+		"silverorange/admin": "^2.5.0",
+		"silverorange/site": "^4.11.0",
+		"silverorange/swat": "^2.7.0"
 	},
 	"autoload": {
 		"classmap": [ "Building/" ]
