@@ -1,8 +1,5 @@
 <?php
 
-require_once 'Admin/pages/AdminObjectEdit.php';
-require_once 'Building/dataobjects/BuildingBlock.php';
-
 /**
  * @package   Building
  * @copyright 2014-2016 silverorange

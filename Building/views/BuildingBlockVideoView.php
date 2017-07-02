@@ -1,9 +1,5 @@
 <?php
 
-require_once 'Site/dataobjects/SiteVideoMedia.php';
-require_once 'Site/SiteJwPlayerMediaDisplay.php';
-require_once 'Building/views/BuildingBlockView.php';
-
 /**
  * @package   Building
  * @copyright 2014-2016 silverorange

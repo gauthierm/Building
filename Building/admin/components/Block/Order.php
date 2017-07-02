@@ -1,7 +1,5 @@
 <?php
 
-require_once 'Admin/pages/AdminOrder.php';
-
 /**
  * @package   Building
  * @copyright 2014-2016 silverorange

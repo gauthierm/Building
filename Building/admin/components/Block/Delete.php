@@ -1,8 +1,5 @@
 <?php
 
-require_once 'Admin/pages/AdminDBDelete.php';
-require_once 'Building/dataobjects/BuildingBlockWrapper.php';
-
 /**
  * @package   Building
  * @copyright 2014-2016 silverorange
