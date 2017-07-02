@@ -41,8 +41,5 @@
 	},
 	"autoload": {
 		"classmap": [ "Building/" ]
-	},
-	"include-path": [
-		"./"
-	]
+	}
 }
