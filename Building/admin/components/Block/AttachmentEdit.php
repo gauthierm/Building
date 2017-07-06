@@ -19,7 +19,7 @@ class BuildingBlockAttachmentEdit extends BuildingBlockEdit
 
 	protected function getUiXml()
 	{
-		return 'Building/admin/components/Block/attachment-edit.xml';
+		return __DIR__.'/attachment-edit.xml';
 	}
 
 	// }}}

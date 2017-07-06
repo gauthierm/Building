@@ -11,7 +11,7 @@ class BuildingBlockXHTMLEdit extends BuildingBlockEdit
 
 	protected function getUiXml()
 	{
-		return 'Building/admin/components/Block/xhtml-edit.xml';
+		return __DIR__.'/xhtml-edit.xml';
 	}
 
 	// }}}

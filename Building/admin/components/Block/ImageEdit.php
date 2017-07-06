@@ -19,7 +19,7 @@ class BuildingBlockImageEdit extends BuildingBlockEdit
 
 	protected function getUiXml()
 	{
-		return 'Building/admin/components/Block/image-edit.xml';
+		return __DIR__.'/image-edit.xml';
 	}
 
 	// }}}

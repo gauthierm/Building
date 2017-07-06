@@ -19,7 +19,7 @@ class BuildingBlockVideoEdit extends BuildingBlockEdit
 
 	protected function getUiXml()
 	{
-		return 'Building/admin/components/Block/video-edit.xml';
+		return __DIR__.'/video-edit.xml';
 	}
 
 	// }}}
