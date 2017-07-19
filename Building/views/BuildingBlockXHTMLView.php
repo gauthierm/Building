@@ -11,7 +11,7 @@ class BuildingBlockXHTMLView extends BuildingBlockView
 {
 	// {{{ protected properties
 
-	/** 
+	/**
 	 * @var integer
 	 *
 	 * @see BuildingBlockXHTMLView::setBodySummaryLength()
