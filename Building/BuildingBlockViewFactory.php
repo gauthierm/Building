@@ -31,9 +31,10 @@ class BuildingBlockViewFactory
 	 * @see SwatViewFactory::get()
 	 * @see BuildingBlockViewFactory::getViewType()
 	 */
-	public static function getBlockView(SiteApplication $app,
-		BuildingBlock $block)
-	{
+	public static function getBlockView(
+		SiteApplication $app,
+		BuildingBlock $block
+	) {
 		return SiteViewFactory::get($app, self::getViewType($block));
 	}
 
