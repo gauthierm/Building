@@ -1,8 +1,5 @@
 <?php
 
-require_once 'Building/views/BuildingBlockView.php';
-require_once 'Building/BuildingBlockViewFactory.php';
-
 /**
  * Special view that can display any type of block
  *

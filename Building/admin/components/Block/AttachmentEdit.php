@@ -1,8 +1,5 @@
 <?php
 
-require_once 'Site/dataobjects/SiteAttachmentSet.php';
-require_once 'Building/admin/components/Block/Edit.php';
-
 /**
  * @package   Building
  * @copyright 2014-2016 silverorange
@@ -22,7 +19,7 @@ class BuildingBlockAttachmentEdit extends BuildingBlockEdit
 
 	protected function getUiXml()
 	{
-		return 'Building/admin/components/Block/attachment-edit.xml';
+		return __DIR__.'/attachment-edit.xml';
 	}
 
 	// }}}

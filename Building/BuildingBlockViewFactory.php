@@ -1,13 +1,5 @@
 <?php
 
-require_once 'Site/dataobjects/SiteAudioMedia.php';
-require_once 'Site/dataobjects/SiteVideoMedia.php';
-require_once 'Site/dataobjects/SiteImage.php';
-require_once 'Site/dataobjects/SiteAttachment.php';
-require_once 'Site/SiteViewFactory.php';
-require_once 'Building/Building.php';
-require_once 'Building/dataobjects/BuildingBlock.php';
-
 /**
  * Factory for creating block views
  *

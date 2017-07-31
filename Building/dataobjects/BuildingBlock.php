@@ -1,10 +1,5 @@
 <?php
 
-require_once 'SwatDB/SwatDBDataObject.php';
-require_once 'Site/dataobjects/SiteAttachment.php';
-require_once 'Site/dataobjects/SiteImage.php';
-require_once 'Site/dataobjects/SiteMedia.php';
-
 /**
  * Base object for CMS
  *

@@ -1,7 +1,5 @@
 <?php
 
-require_once 'Building/admin/components/Block/Edit.php';
-
 /**
  * @package   Building
  * @copyright 2014-2016 silverorange
@@ -13,7 +11,7 @@ class BuildingBlockXHTMLEdit extends BuildingBlockEdit
 
 	protected function getUiXml()
 	{
-		return 'Building/admin/components/Block/xhtml-edit.xml';
+		return __DIR__.'/xhtml-edit.xml';
 	}
 
 	// }}}

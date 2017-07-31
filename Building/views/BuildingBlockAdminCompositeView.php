@@ -1,8 +1,5 @@
 <?php
 
-require_once 'Building/views/BuildingBlockCompositeView.php';
-require_once 'Swat/SwatToolLink.php';
-
 /**
  * Block view that adds admin action links
  *

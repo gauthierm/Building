@@ -1,8 +1,5 @@
 <?php
 
-require_once 'Site/dataobjects/SiteImageSet.php';
-require_once 'Building/admin/components/Block/Edit.php';
-
 /**
  * @package   Building
  * @copyright 2014-2016 silverorange
@@ -22,7 +19,7 @@ class BuildingBlockImageEdit extends BuildingBlockEdit
 
 	protected function getUiXml()
 	{
-		return 'Building/admin/components/Block/image-edit.xml';
+		return __DIR__.'/image-edit.xml';
 	}
 
 	// }}}

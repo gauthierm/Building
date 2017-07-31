@@ -1,8 +1,5 @@
 <?php
 
-require_once 'Site/dataobjects/SiteVideoMedia.php';
-require_once 'Building/admin/components/Block/Edit.php';
-
 /**
  * @package   Building
  * @copyright 2016 silverorange
@@ -22,7 +19,7 @@ class BuildingBlockVideoEdit extends BuildingBlockEdit
 
 	protected function getUiXml()
 	{
-		return 'Building/admin/components/Block/video-edit.xml';
+		return __DIR__.'/video-edit.xml';
 	}
 
 	// }}}
