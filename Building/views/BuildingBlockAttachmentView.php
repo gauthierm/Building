@@ -105,7 +105,7 @@ class BuildingBlockAttachmentView extends BuildingBlockView
 
 			$mime_type_class = sprintf(
 				'building-block-attachment-icon-%s',
-				strtolower(
+				mb_strtolower(
 					str_replace(
 						'/',
 						'-',
